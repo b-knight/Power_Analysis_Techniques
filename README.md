@@ -11,10 +11,7 @@
 </div>
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As much as the above scene may reflect the ideal scenario, data analysts and data scientists appreciate that reality is rarely so accomodating. Specifically, while power analysis is more or less a solved problem when one is using conventional techniques such as &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (there are a variety of on-line power calculators to choose among). However, if we have need for less-conventional methods - say, in the event that our data is not sampled independently - then the the matter of estimating statistical power and suitable sample size quickly becomes non-trivial. 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At Instacart, we often have to make decisions using data that is clustered by customer, retailer, etc., and while there are a variety of tools (e.g. [hierarchical models](https://en.wikipedia.org/wiki/Multilevel_model), and 
-
-
-[ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At Instacart, we often have to make decisions using data that is clustered by customer, retailer, etc., and while there are a variety of tools (e.g. [hierarchical models](https://en.wikipedia.org/wiki/Multilevel_model), and [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)
 with robust clustered standard errors) that allow us to overcome these problems, we are still left with the dilemma of how to determine how large a sample is required for these tools to perform well. To this end, running simulations can yield the most accurate estimates. However, simulations are often time-consuming and costly. <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Below we outline two *scalable* options for power analysis in the context of clustered data: (1.) approximating the power curve by sampling the exponential distribution, and (2.) estimating the effect size with the variance of residuals. Which of these approaches is preferable will be contingent on one's preferences in regards to the precision / compute trade-off.<br>
 
