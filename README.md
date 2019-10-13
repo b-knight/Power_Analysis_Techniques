@@ -11,9 +11,16 @@
 </div>
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As much as the above scene may reflect the ideal scenario, data analysts and data scientists appreciate that reality is rarely so accomodating. While power analysis is more or less a solved problem when one is using conventional difference of means/proportions tests (there are a variety of on-line power calculators to choose among), if we need to employ multivariate modeling - say, in the event that our data is not sampled independently - then the the issue of accurately estimating statistical power and suitable sample size quickly becomes non-trivial. <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At Instacart, we often have to make decisions using data that is clustered by customer, retailer, etc., and while there are a variety of tools (e.g. [multilevel_models](https://en.wikipedia.org/wiki/Multilevel_model), and [ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At Instacart, we often have to make decisions using data that is clustered by customer, retailer, etc., and while there are a variety of tools (e.g. 
+[multilevel_models](https://en.wikipedia.org/wiki/Multilevel_model), and 
+[ordinary least squares](https://en.wikipedia.org/wiki/Ordinary_least_squares)
 with robust clustered standard errors) that allow us to overcome these problems, we are still left with the dilemma of how to determine how large a sample is required for these tools to perform well. To this end, running simulations can yield the most accurate estimates. However, simulations are often time-consuming and costly. <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Below we outline two *scalable* options for power analysis in the context of clustered data: (1.) approximating the power curve by sampling the exponential distribution, and (2.) estimating the effect size with the variance of residuals. Which of these approaches is preferable will be contingent on one's preferences in regards to the precision / compute trade-off.<br>
 
 ## Approximating the Power Curve
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A t-test
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To determine the relationship between the number of observations in our sample and the probability of correctly rejecting the NULL hypothesis in the event of a genuine change in the metric of interest, we assume that statistical power is an exponential function parameterized by &#955;. The problem is that the value of &#955; is unknown and could correspond to any one of the hypothetical power curves below.
+<div>
+<div align="center">
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_1.png" align="middle" width="720" height="360" />
+</div>
+</div>
