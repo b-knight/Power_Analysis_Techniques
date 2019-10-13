@@ -21,14 +21,14 @@ with robust clustered standard errors) that allow us to overcome these problems,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To determine the relationship between the number of observations in our sample and the probability of correctly rejecting the NULL hypothesis in the event of a genuine change in the metric of interest, we assume that statistical power is an exponential function parameterized by &#955;. The problem is that the value of &#955; is unknown and could correspond to any one of the hypothetical power curves below.
 <div>
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_1.png" align="middle" width="720" height="360" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_1.png" align="middle" width="576" height="288" />
 </div>
 </div>
 
 <div>
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_2.png" align="middle" width="468" height="234" />
- <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_3.png" align="middle" width="468" height="234" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_2.png" align="middle" width="432" height="216" />
+ <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_3.png" align="middle" width="432" height="216" />
 </div>
 </div>
 
