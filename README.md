@@ -24,3 +24,11 @@ with robust clustered standard errors) that allow us to overcome these problems,
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_1.png" align="middle" width="720" height="360" />
 </div>
 </div>
+
+<div>
+<div align="center">
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_2.png" align="middle" width="468" height="234" />
+ <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_3.png" align="middle" width="468" height="234" />
+</div>
+</div>
+
