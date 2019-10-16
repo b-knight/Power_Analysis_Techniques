@@ -11,7 +11,7 @@
 
 
 \[\text{\bf{Customer C Spend on Order X}} = c*r*t + \epsilon \]
-\[c = \text{Customer's mean order amount in dollars where } c \sim \mathcal{N}(\$100,\$25).\]
+\[c = \text{Customer's mean order amount in dollars where } c \sim \mathcal{N}(\$100,\$10).\]
 \[r = \text{Scalar corresponding to mean retailer order amount where } r \sim \mathcal{N}(1.0,0.05).\]
 \[t = \text{Whether or not the customer recieved the experimental treatment } t \in [1,1.1].\]
 \[\epsilon = \text{Random noise where } \epsilon \sim \mathcal{N}(\$10,\$1).\]
@@ -53,5 +53,13 @@
 \end{subfigure}%
 \caption[short]{}
 \end{figure}
+\newpage
+If we were implementing a difference of means t-test, then we could simply apply the formula below to get the appropriate sample size.
+\[n = 2 \Bigg(\frac{Z_{1-(\alpha/2)}+Z_{1-\beta}}{ES}\Bigg)^2 \text{  where  } ES = \frac{|\mu_1=\mu_2|}{\sigma}\]
 
+Here, $\alpha$ is the probability of a Type I error (false rejection of the NULL hypothesus, i.e. a false positive) and $\beta$ is the probability of a Type II error (i.e. a false negative). Observe how if we want to make our test more rigorous and reduce the false positive rate, the the left side of the numerator increase and the resulting recommended sample size - $n$, also increases. Similarly, if we want to reduce the probability for failing to detect the difference across groups, then we will need to increase the right-hand side of the numerator - also increasing the recommended sample size.
+\[ES = \frac{|\mu_1=\mu_2|}{\sigma}\]
+\[ y = \beta_0 + X_1\beta_1\]
+
+\[ y = \beta_0X_1 + ... + \beta_nX_n + \epsilon \]
 \end{document}
