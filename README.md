@@ -54,9 +54,11 @@ Large-scale Accelerated Exploration of Chemical Space") and Bayesian inference.<
 ### Approximating Effect Size by Modeling the Variance of Residuals
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; While the approach to power analysis discussed above aims to reduce the amount of simulations required by making these simulations as targeted as possible, the second approach discards the use of simulations entirely. The advantage is that our second approach is drastically faster. However, the disadvantage is that the experimenter is left without a precise estimate of the statistical power actually at their disposal.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In this strategy, we use the standard formula for sample size as if we were implementing a difference of means t-test. The key step is estimating an appropriate effect size for the sample size calculation. To this end, we use a series of regression outputs - assuming that the true effect size is baked into the variance of the resulting residuals. Before getting into details, let's review how required sample size is calculated in the context of a t-test.<br><br>
+
+<div align="center">
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/formula_for_ttest_sample_size.png" align="middle" width="434" height="76" />
 </div>
-</div>
+
 In the formula above, the required sample size - *n* is a function of the desired level of statistical significance and the desired amount of statistical power normalized by the effect size. In the numerator, &#945; is the probability of a Type I error (false rejection of the NULL hypothesus, i.e. a false positive) and &#946; is the probability of a Type II error (i.e. a false negative). Observe how if we want to make our test more rigorous and reduce the false positive rate, the the left side of the numerator increase and the resulting recommended sample size - *n*, also increases. Similarly, if we want to reduce the probability for failing to detect the difference across groups, then we will need to increase the right-hand side of the numerator - also increasing the recommended sample size.
 
 
