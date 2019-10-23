@@ -41,7 +41,7 @@
 
 
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/Part_I_Distribution_Specification.png" align="middle" width="528" height="198" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/Part_I_Distribution_Specification.png" align="middle" width="735" height="261" />
 </div>
 
 The good news is that this underlying problem is akin to the exploration versus exploitation problem which confronts anyone seeking the ideal configuration of hyper-parameters for optimizing a machine learning model. Known solutions include [Thompson Sampling](https://arxiv.org/pdf/1706.01825.pdf "Parallel and Distributed Thompson Sampling for
