@@ -39,9 +39,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In the example above we employed a total of 4,000 hypothetical simulations - 3,000 to infer the broad countour of the power curve, and an addition 1,000 to assess the effective power predicted from the curve fitted by Scipy. The fact that our estimate was slightly off begs the question of whether there are alternate, more predictive approaches to deploying these simulations. One approach might be to provide Scipy with additional points. If we were able to achieve a somewhat decent approximation with three points, then it reckons that we should be able to achieve a better fit by providing additional information. However, let's say that we have a fair number of (impatient) users and that 4,000 simulations is the maximum amount of compute we can feasibly expend for a single power analysis. In this scenario, providing Scipy with six points as opposed to three points implies that we can only use 500 versus 1,000 simulations per point - we will necessarily experience a loss of precision. If we are on a fishing expedition for the 'true' shape of the power curve, then simulating more hypothetical sample sizes would be the equivalent of using a wider net, whereas using more simulations per point would be comparable to using a finer mesh - increasing both can only improve the likelihood of capturing our quarry, but the issue becomes one of deploying scarce resources most efficiently.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Let's explore this trade-off more concretely. 
 
+
+<div align="center">
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/Part_I_Distribution_Specification.png" align="middle" width="528" height="198" />
+</div>
+
 The good news is that this underlying problem is akin to the exploration versus exploitation problem which confronts anyone seeking the ideal configuration of hyper-parameters for optimizing a machine learning model. Known solutions include [Thompson Sampling](https://arxiv.org/pdf/1706.01825.pdf "Parallel and Distributed Thompson Sampling for
 Large-scale Accelerated Exploration of Chemical Space") and Bayesian inference.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In contrast, 
+
+
 
 
 ### Approximating Effect Size by Modeling the Variance of Residuals
