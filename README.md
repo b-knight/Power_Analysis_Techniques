@@ -56,7 +56,8 @@
           results.append(0)
 ```
 
-We repeat this process for 100 times for each point, and then feed each point's mean value to Scipy. From the equation of the line output by Scipy, we extract the final sample size recommendation and verify the results with a final 500 simulation. Our estimated effective power is the proportion of those 500 simulations in which we found the coefficient estimate of the treatment variable to be significant at &#945; < 0.05.
+We repeat this process for 100 times for each point, and then feed each point's mean value to Scipy. From the equation of the line output by Scipy, we extract the final sample size recommendation and verify the results with a final 500 simulations. Our estimated effective power is the proportion of those 500 simulations in which we found the coefficient estimate of the treatment variable to be significant at &#945; < 0.05. Because an individual trial can always be a fluke, we repeat the process described 30 times to build a reasonable distribution.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; From here we tweak the number of points in our implementation using +/- 1 SD (n = 8k, 10k, 12k), +/- 1,2 SDs (n = 6k, 8k, 10k, 12k, 14k), and +/- 1,2,3 SDs (n = 4k, 6k, 8k, 10k, 12k, 14k, 16k). We also also explore estimating each of these points with 100, 200, or 300 simulations (the verification step is held fixed at 500 simulations). All told, we explore a total of 9 models using 405,000 simulations the results of which are displayed in teh boxplots below.<br>    
 <div align="center"> 
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/nine_model_results.png" align="middle" width="1047" height="503" />
 </div>
