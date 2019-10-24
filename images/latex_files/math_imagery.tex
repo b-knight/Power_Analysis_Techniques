@@ -16,8 +16,6 @@
 \[r = \text{Scalar corresponding to mean retailer order amount where } r \sim \mathcal{N}(1.0,0.05).\]
 \[t = \text{Whether or not the customer recieved the experimental treatment } t \in [1,1.01].\]
 \[\epsilon = \text{Random noise where } \epsilon \sim \mathcal{N}(\$10,\$1).\]
-\\
-\indent\indent Recall that the data is clustered (we aspire for customers to place multiple orders!), thus:
 \[\text{The number of orders placed by Customer C }  \sim exp(\lambda = 1).\]
 
 
@@ -71,7 +69,6 @@ Here, $\alpha$ is the probability of a Type I error (false rejection of the NULL
 
 \begin{center}
 \begin{multline}
-\end{center}
 Y = \text{Signal} + \text{Explained Noise}_{\text{clustered}} + \\
 \phantom{a} =  \text{Unexplained Noise}_{\text{clustered}} 
 \end{multline}
