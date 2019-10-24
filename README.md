@@ -41,7 +41,7 @@
 <div align="center"> 
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/Part_I_Distribution_Specification.png" align="middle" width="588" height="208" />
 </div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now that we have specified the data generating process, let's assess different approaches to inferring the power curve. Typically, A/B tests of this natures consisted of 10,000 observations, but have historically varied in their sample sizes with a standard deviation of 2,000 observations. Our first attempt (Model I) elects three candidate sample sizes of 8,000, 10,000, and 12,000 observations. For each of the three candidate sample sizes we draw a random sample of the corresponding size and then estimate the coefficient for the treatment effect using ordinary least squares using Python's [Statsmodels] (https://www.statsmodels.org/stable/index.html "Statsmodels's Documentation") package.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now that we have specified the data generating process, let's assess different approaches to inferring the power curve. Typically, A/B tests of this natures consisted of 10,000 observations, but have historically varied in their sample sizes with a standard deviation of 2,000 observations. Our first attempt (Model I) elects three candidate sample sizes of 8,000, 10,000, and 12,000 observations. For each of the three candidate sample sizes we draw a random sample of the corresponding size and then estimate the coefficient for the treatment effect using ordinary least squares using Python's [Statsmodels](https://www.statsmodels.org/stable/index.html "Statsmodels’s Documentation") package
 
 ```python
       import statsmodels.api as sm
