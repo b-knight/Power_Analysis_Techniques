@@ -23,7 +23,7 @@
 <div align="center">
 <p align="center"><b>Figure 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Figure 2</b></p>
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_1.png" align="middle" width="422" height="216" />
- <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_2.png" align="middle" width="337" height="173" />
+ <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_2.png" align="middle" width="422" height="216" />
 </div>
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At this point we still don't know the value of &#955;. However, we do have three points that are closely aligned to the true power curve of interest (in this case, the blue curve). We can use these three points to plot a curve using Scipy's curve fit functionality (Figure 3). Now we have an approximation of the curve and can use it to inform our power analysis. Our goal is to specify an appropriate sample size that will yield 0.70 statical power. The curve we just drew suggests that a sample size of 540,000 will fulfill this requirement, so we implement a final round of 1,000 simulations. The results from these simulations are shown in Figure 4 and suggest that we overshot our mark. The actual amount of statistical power a sample of this size will tend to yield is closer to 0.74. At this point we can either accept the current target sample size recommendation as somewhat excessive, or conduct additional simulations to find a value of n more closely aligned with our specifications. 
@@ -60,7 +60,7 @@ We repeat this process for 100 times for each point, and then feed each point's 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; From here we tweak the number of points in our implementation using +/- 1 SD (n = 8k, 10k, 12k), +/- 1,2 SDs (n = 6k, 8k, 10k, 12k, 14k), and +/- 1,2,3 SDs (n = 4k, 6k, 8k, 10k, 12k, 14k, 16k). We also also explore estimating each of these points with 100, 200, or 300 simulations each (the verification step is held fixed at 500 simulations). All told, we use a total of 9 models (405,000 simulations) the results of which are displayed in the boxplots below.<br>
 
 <div align="center"> 
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/nine_model_results.png" align="middle" width="1047" height="503" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/nine_model_results.png" align="middle" width="994" height="478" />
 </div>
 <br>
 
