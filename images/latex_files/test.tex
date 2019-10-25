@@ -28,6 +28,7 @@
 \textbf{Mean Time Required}                                                   & T                                                            & F                                                             & F                                                             & T                                                             & T                                                            & s                                                             & s                                                              & s                                                               & s                                                             \\ \hline
 \textbf{\begin{tabular}[c]{@{}c@{}}Mean Error \\ (Est. Power)\end{tabular}}   & F                                                            & T                                                             & T                                                             & T                                                             & T                                                            & s                                                             & s                                                              & s                                                               & s                                                             \\ \hline
 \textbf{\begin{tabular}[c]{@{}c@{}}Std. of Error\\ (Est. Power)\end{tabular}} & F                                                            & T                                                             & F                                                             & F                                                             & F                                                            & s                                                             & s                                                              & s                                                               & s                                                            
+\caption[short]{Intel Xeon(R) CPU E5-2670}
 \end{tabular}
 \end{table}
 
@@ -62,9 +63,10 @@
     \caption[short]{$\mu$ +/- [1,2]$\sigma$ \\with 2,000 iterations.}
     \includegraphics[width=0.75\textwidth]{sd_3.png}
     \caption[short]{$\mu$ +/- [1,2,3]$\sigma$ \\with 2,000 iterations.}
-\end{subfigure}
+\end{subfigure}%
+\caption[short]{Intel® Xeon(R) CPU E5-2670}
 \end{figure}
-Intel Xeon(R) CPU E5-2670
+
 
 \newpage
 If we were implementing a difference of means t-test, then we could simply apply the formula below to get the appropriate sample size.
@@ -77,14 +79,12 @@ Here, $\alpha$ is the probability of a Type I error (false rejection of the NULL
 \[ y = \beta_0 + X_1\beta_1 + \mathlarger{\mathlarger{\mathlarger{\epsilon}}}\]
 \[ y = \beta_0 + X_1\beta_1 + X_2\beta_2 + \mathlarger{\mathlarger{\epsilon}}\]
 \[ y = \beta_0 + X_1\beta_1 + X_2\beta_2 + X_3\beta_3 +\mathlarger{\epsilon}\]
-\[ y = \beta_0 + ... + \beta_nX_n + \epsilon \text{\phantom{aa} where \phantom{aa}} \hat{\epsilon} = y - \hat{y}\]
+\[ y = \beta_0 + ... + \beta_nX_n + \epsilon \text{\phantom{aa} where \phantom{aa}} \epsilon = \hat{y} - y\]
 
 \newpage
 \[Y = \text{Signal} + \text{Noise}_{\text{clustered}} + \text{Noise}_{\text{unclustered}} \]
 
 %\[Y = \text{Signal} + \text{Explained Noise}_{\text{clustered}} + \text{Unexplained Noise}_{\text{clustered}} +  \n \text{Explained Noise}_{\text{unclustered}} +  \text{Unexplained Noise}_{\text{clustered}}\]
-
-
 
 \begin{center}
 \begin{multline}
