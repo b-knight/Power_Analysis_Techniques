@@ -94,4 +94,12 @@ Large-scale Accelerated Exploration of Chemical Space") and Bayesian inference.<
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/relation_to_epsilon.png" align="middle" width="452" height="206" />
 </div><br>
 
+asdadadad
+
+<div align="center">
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/residuals.png" align="middle" width="566" height="213" />
+</div><br>
+
+
+
 
