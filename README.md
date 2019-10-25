@@ -1,4 +1,4 @@
-# Enabling Better Modeling by Scaling Power Analysis
+# Better A/B Testing Through Scalable Power Analysis
 ### Benjamin S. Knight
 #### October 12th 2019
 *How Instacart estimates appropriate sample sizes for A/B test configurations beyond standard t-tests.*
