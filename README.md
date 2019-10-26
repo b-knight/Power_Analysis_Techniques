@@ -62,8 +62,9 @@ We repeat this process for 100 times for each point, and then feed each point's 
 
 <div align="center"> 
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/nine_model_results.png" align="middle" width="994" height="478" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/Results_Table.png" align="middle" width="942" height="393" />
 </div>
-<br><br>
+<br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The results suggest that Scipy yields much more accurate curves as more points are added, and that while improving the quality of these points will improved fit the benefit is much less pronounced. For example, in Method VII we deployed 175% of the compute used in Method I (1,400 versus 800 simulations), and yet the the variance in the effective power estimates scarcely decreased. In contrast, Methods V and VII performed very differently despite using a comparable amount of compute (1,500 and 1,400 simulations respectively). Across 30 iterations Methods V and VII yielded sample size estimates that on average, exceeded our target of 0.8 by 0.033 and 0.025 respectively. However, Method V was far more consistent than model VII. For Method VII, the effective power estimates yielded from the recommended sample sizes had a standard deviation of 0.084. For Method V, this figure is only 0.052. These results imply that 32% of the time that we look to Method V for a recommended sample size, we risk oversampling to the extent that our effective power is more than 11 percentage points greater than necessary, or undersampling to the extent that our effective power is more than 6 percentage points lower than specified.<br> 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The results suggest that experimenting with a wide variety of candidate sample sizes
