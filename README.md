@@ -92,8 +92,8 @@ Large-scale Accelerated Exploration of Chemical Space") and Bayesian inference.<
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Recall the specification of the model that we are trying to estimate an appropriate sample size for: the amount (X) that customer C spends on a particular order is a function of (1.) whether or not customer C recieved the treatment, (2.) C's mean order amount prior to treatment, and (3.) the average amount spent per order at the retailer prior to treatment. To make this a tad more realistic, let's add (4.) day-of-the-week seasonality to our data generating process. Within our simulated data, let's assume a linear increase in order amount as the week progresses from Monday to Sunday. For example, if the order falls on a Monday we will scale it down to 80% of the amount, if the order falls on a Tuesday we will scale it down to 90% of the amount and so on, incrementing the scalar by ten percentage points until we arrive on the busiest day of the week - Sunday where the order amount is scaled up to 130% of its value. 
 
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/relation_to_epsilon.png" align="middle" width="452" height="206" />
-</div><br>
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/new_model.png" align="middle" width="915" height="315" />
+</div>
 
 In t-test land, the noise that we are concermed with is a function of the variable that we are measuring - Y. In the world of multivariate modeling, the variation of interest is the variation in Y NOT captured by our predictor variables. When our model fails to predict a portion of Y's variation, that residual variation is dumped into the &#949; term - also known as the residual! As our model becomes better and as the proportion of Y's variation that in unexplained decreases, our &#949; term shrinks in size.<br>
 
