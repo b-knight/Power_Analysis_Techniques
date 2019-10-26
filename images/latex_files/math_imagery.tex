@@ -99,18 +99,13 @@ Here, $\alpha$ is the probability of a Type I error (false rejection of the NULL
 \[ y = \beta_0 + ... + \beta_nX_n + \epsilon \text{\phantom{aa} where \phantom{aa}} \hat{\epsilon} = y - \hat{y}\]
 
 \newpage
-\[Y = \text{Signal} + \text{Noise}_{\text{clustered}} + \text{Noise}_{\text{unclustered}} \]
-
-%\[Y = \text{Signal} + \text{Explained Noise}_{\text{clustered}} + \text{Unexplained Noise}_{\text{clustered}} +  \n \text{Explained Noise}_{\text{unclustered}} +  \text{Unexplained Noise}_{\text{clustered}}\]
-
-
-
-\begin{center}
-\begin{multline}
-Y = \text{Signal} + \text{Explained Noise}_{\text{clustered}} + \\
-\phantom{a} =  \text{Unexplained Noise}_{\text{clustered}} 
-\end{multline}
-\end{center}
+\[\text{In our ongoing effort to predict the amount spent on an individual order, let's try the following...}\]
+\[ y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \beta_3X_3 + \beta_4X_4 +\mathlarger{\epsilon}\]
+\[\text{where } X_1 \text{ is whether the customer was assigned the treatment...}\]
+\[X_2 \text{ is the customer's mean order amount prior to treatment...}\]
+\[X_3 \text{ is the retailer's mean order amount prior to treatment...}\]
+\[X_4 \text{ is the mean order amount for that day of the week prior to treatment...}\]
+\[\epsilon \text{ is unaccounted for variation in $y$, and } \hat{\epsilon} = y - \hat{y}\]
 
 
 \end{document}

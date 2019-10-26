@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.10)  26 OCT 2019 12:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.10)  26 OCT 2019 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -834,11 +834,11 @@ Package relsize Warning: Font size 24.88792pt is too large.
 
 [5] [6] [7 <./sd_3.png>] (./math_imagery.aux) ) 
 Here is how much of TeX's memory you used:
- 4085 strings out of 492982
- 60135 string characters out of 6134896
+ 4090 strings out of 492982
+ 60181 string characters out of 6134896
  148415 words of memory out of 5000000
- 7588 multiletter control sequences out of 15000+600000
- 18306 words of font info for 71 fonts, out of 8000000 for 9000
+ 7591 multiletter control sequences out of 15000+600000
+ 18951 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,24n,40p,699b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/f
@@ -852,7 +852,7 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on math_imagery.pdf (7 pages, 144626 bytes).
+Output written on math_imagery.pdf (7 pages, 143377 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
