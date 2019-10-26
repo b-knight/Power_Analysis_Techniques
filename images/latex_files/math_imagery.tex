@@ -6,6 +6,7 @@
 \usepackage{subcaption}
 \usepackage{amsmath}
 \usepackage{relsize}
+\usepackage{pdflscape}
 \begin{document}
 
 
@@ -21,15 +22,33 @@
 
 
 \newpage
+\begin{landscape}
 \begin{table}[]
 \begin{tabular}{c|ccccccccc}
                                                                               & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ I\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ II\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method\\ III\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ IV\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ V\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ VI\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ VII\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ VIII\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ IX\end{tabular}} \\ \hline
-\textbf{Simulations Required}                                                 & T                                                            & F                                                             & T                                                             & T                                                             & T                                                            & s                                                             & s                                                              & s                                                               & s                                                             \\ \hline
-\textbf{Mean Time Required}                                                   & T                                                            & F                                                             & F                                                             & T                                                             & T                                                            & s                                                             & s                                                              & s                                                               & s                                                             \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Mean Error \\ (Est. Power)\end{tabular}}   & F                                                            & T                                                             & T                                                             & T                                                             & T                                                            & s                                                             & s                                                              & s                                                               & s                                                             \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Std. of Error\\ (Est. Power)\end{tabular}} & F                                                            & T                                                             & F                                                             & F                                                             & F                                                            & s                                                             & s                                                              & s                                                               & s                                                            
+\textbf{\begin{tabular}[c]{@{}c@{}}Points Used\end{tabular}} 
+& 3  &5    &7 & 3  &5    &7 & 3  &5    &7                                            \\ \hline                                                                              
+\textbf{\begin{tabular}[c]{@{}c@{}}Simulations Per Point\end{tabular}} 
+& 100    & 100  & 100    & 200 & 200  & 200  & 300 & 300  & 300   
+\\ \hline                                                                              
+\textbf{\begin{tabular}[c]{@{}c@{}} Verification Simulations \end{tabular}}
+& 500  & 500  & 500  & 500  & 500  & 500   & 500    & 500  & 500                                          
+\\ \hline                                                                              
+\textbf{\begin{tabular}[c]{@{}c@{}} Total Simulations \\ Required\end{tabular}} 
+& 800 & 1,000 & 1,200 & 1,100 & 1,500 & 1,900 & 1,400 & 2,000 & 2,600                                        \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Mean Run Time (Min.)\end{tabular}} & 10.3 & 10.2 & 14.9  & 14.5 & 17.8  & 25.0 & 18.7    
+& 23.1 & 35.0                                                                                                                                                                                                                                                        \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Mean Error: \\ \small{Est. Power - Desired Power}\end{tabular}}   
+& 0.012	& 0.048	& 0.046	& 0.043 & 0.033 & 0.041	& 0.025 & 0.026	& 0.042
+\\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Std. of Error\\ \small{Est. Power - Desired Power}\end{tabular}} 
+& 0.094 & 0.057 & 0.043 & 0.07 & 0.052 & 0.037 & 0.084 & 0.034 & 0.028
 \end{tabular}
 \end{table}
+\begin{center}
+Simulations were conducted using a single thread (Intel Xeon(R) CPU E5-2670).
+\end{center}
+\end{landscape}
 
 \newpage
 
@@ -64,7 +83,7 @@
     \caption[short]{$\mu$ +/- [1,2,3]$\sigma$ \\with 2,000 iterations.}
 \end{subfigure}
 \end{figure}
-Intel Xeon(R) CPU E5-2670
+
 
 \newpage
 If we were implementing a difference of means t-test, then we could simply apply the formula below to get the appropriate sample size.
