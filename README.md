@@ -100,7 +100,11 @@ How large a sample will the model above need to reliably detect the influence of
 <div align="center">
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/residuals_v2.png" align="middle" width="653" height="187" />
 </div><br>
+asdasdadsa
 
+<div align="center">
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/sixteen_model_results.png" align="middle" width="994" height="415" />
+</div><br>
 
 
 
