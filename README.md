@@ -103,7 +103,7 @@ How large a sample will the model above need to reliably detect the influence of
 asdasdadsa
 
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/sixteen_model_results.png" align="middle" width="994" height="415" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/sixteen_model_results.png" align="middle" width="948" height="396" />
 </div><br>
 
 
