@@ -97,7 +97,7 @@ How large a sample will the model above need to reliably detect the influence of
 sdfsd
 
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/multicollinearity_impact.png" align="middle" width="724" height="349" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/multicollinearity_impact_v2.png" align="middle" width="724" height="349" />
 </div><br>
 
 
