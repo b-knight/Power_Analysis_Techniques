@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.10)  29 OCT 2019 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.10)  13 NOV 2019 22:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -293,12 +293,12 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+LaTeX Font Info:    Try loading font information for U+msa on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+LaTeX Font Info:    Try loading font information for U+msb on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -307,23 +307,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 26.
+               Default added (so using `tbp') on input line 31.
 
 [2
 
 ]
-<sd_3.png, id=14, 469.755pt x 305.14pt>
+<sd_3.png, id=15, 469.755pt x 305.14pt>
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
-Package pdftex.def Info: sd_3.png  used on input line 60.
+Package pdftex.def Info: sd_3.png  used on input line 65.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
-Package pdftex.def Info: sd_3.png  used on input line 62.
-(pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
-File: sd_3.png Graphic file (type png)
-<use sd_3.png>
-Package pdftex.def Info: sd_3.png  used on input line 64.
+Package pdftex.def Info: sd_3.png  used on input line 67.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
@@ -331,11 +327,11 @@ Package pdftex.def Info: sd_3.png  used on input line 69.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
-Package pdftex.def Info: sd_3.png  used on input line 71.
+Package pdftex.def Info: sd_3.png  used on input line 74.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
-Package pdftex.def Info: sd_3.png  used on input line 73.
+Package pdftex.def Info: sd_3.png  used on input line 76.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
@@ -343,494 +339,498 @@ Package pdftex.def Info: sd_3.png  used on input line 78.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
-Package pdftex.def Info: sd_3.png  used on input line 80.
+Package pdftex.def Info: sd_3.png  used on input line 83.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
 File: sd_3.png Graphic file (type png)
 <use sd_3.png>
-Package pdftex.def Info: sd_3.png  used on input line 82.
+Package pdftex.def Info: sd_3.png  used on input line 85.
+(pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
+File: sd_3.png Graphic file (type png)
+<use sd_3.png>
+Package pdftex.def Info: sd_3.png  used on input line 87.
 (pdftex.def)             Requested size: 143.96492pt x 93.5122pt.
  [3
 
 ] [4]
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
-
-
-Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 29.85591pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 29.85591pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
 
 
 Package relsize Warning: Font size 24.88792pt is too large.
-(relsize)                Using 24.88pt instead on input line 95.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 29.85591pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 29.85591pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
+
+
+Package relsize Warning: Font size 24.88792pt is too large.
+(relsize)                Using 24.88pt instead on input line 100.
 
 [5] [6] [7 <./sd_3.png>] (./math_imagery.aux) ) 
 Here is how much of TeX's memory you used:
@@ -852,7 +852,7 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
 texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on math_imagery.pdf (7 pages, 143377 bytes).
+Output written on math_imagery.pdf (7 pages, 144632 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream
