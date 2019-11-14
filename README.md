@@ -93,7 +93,11 @@ How large a sample will the model above need to reliably detect the influence of
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To assess how our approach work in practice, let's use the data described above in which the value of an order is a function of the customer's underlying mean order amount (prior to treatment), the mean order amount for that retailer (prior to treatment), and the day of the week, and whether or not the customer recieved the treatment. To see how change in the size of the treatment effect influences the accuracy of our sample size estimates, let's use a variety of effect sizes - 5%, 2.5%, 1%, and 0.5% relative (or $4.67, $2.36, $1.00, and $0.42 worth of absolute order valuation relative to a mean value of $125.28). Residual variation is the primary input for our sample size estimate, so we should examine a variety of specifications as well. We define Model I was the full model outlined above. For each of the model II's, III, and IV, we remove an additional covariate (the lagged customer mean amount, the lagged retailer mean amount, and lastly, the day of the week). All told, we have 16 frameworks. Each framework yields a sample size recommendation. To assess the effective power of that sample size within that framework, we run the appropriate model 500 times and record the proportion of outcomes in which we evaluated the coefficient estimate of the treatment variable as statistically significant at the p-value < 0.05 threshold. Our estimate of effective power in-hand, we repeat the process 100 times to build a distribution of outcomes for that framework. The results of these 800,000 simulations are shown below.<br>  
 <div align="center">
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/sixteen_model_results.png" align="middle" width="948" height="396" />
-</div><br>
+</div>
+<div align="center">
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/results_table.png" align="middle" width="940" height="401" />
+</div>
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With the exception of the 16th and final framework, the results fall into two broad categories. Frameworks 5 through 15 all overestimated the required sample size. 
 
 
