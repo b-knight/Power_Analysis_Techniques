@@ -59,7 +59,7 @@ We repeat this process for 100 times for each point, and then feed each point's 
 
 <div align="center"> 
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation_v2/nine_model_results.png" align="middle" width="994" height="415" />
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/Results_Table.png" align="middle" width="954" height="301" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation_v2/nine_model_results_table.png" align="middle" width="1023" height="346" />
 </div>
 <br>
 
