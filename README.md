@@ -58,7 +58,7 @@ We repeat this process for 100 times for each point, and then feed each point's 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; From here we tweak the number of points in our implementation using +/- 1 SD (n = 30k, 40k, 50k), +/- 1,2 SDs (n = 20k, 30k, 40k, 50k, 60k), and +/- 1,2,3 SDs (n = 10k, 20k, 30k, 40k, 50k, 60k, 70k). We also explore estimating each of these points with 100, 200, or 300 simulations each (the verification step is held fixed at 500 simulations). All told, we use a total of 9 methods (405,000 simulations) the results of which are displayed in the boxplots below.<br><br>
 
 <div align="center"> 
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/nine_model_results.png" align="middle" width="994" height="415" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation_v2/nine_model_results.png" align="middle" width="994" height="415" />
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/Results_Table.png" align="middle" width="954" height="301" />
 </div>
 <br>
