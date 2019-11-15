@@ -28,7 +28,10 @@
 
 \newpage
 \begin{landscape}
-\begin{table}[]
+\begin{center}
+\Large{Required Sample Size Estimates Taken Via Interpolation}
+\end{center}
+\begin{table}[h]
 \begin{tabular}{c|ccccccccc}
                                                                               & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ I\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ II\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method\\ III\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ IV\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ V\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ VI\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ VII\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ VIII\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Method \\ IX\end{tabular}} \\ \hline
 \textbf{\begin{tabular}[c]{@{}c@{}}Points Used\end{tabular}} 
@@ -36,22 +39,36 @@
 \textbf{\begin{tabular}[c]{@{}c@{}}Simulations Per Point\end{tabular}} 
 & 100    & 100  & 100    & 200 & 200  & 200  & 300 & 300  & 300   
 \\ \hline                                                                              
+\textbf{\begin{tabular}[c]{@{}c@{}} Total Simulations \\ Required\end{tabular}} 
+& 300 & 500 & 700 & 600 & 1,000 & 1,400 & 900 & 1,500 & 2,100                                        \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Mean Difference \\ in Estimated Power (Std.)\end{tabular}} &
+\begin{tabular}[c]{@{}c@{}}-0.055 \\ (0.14)\end{tabular} &          
+\begin{tabular}[c]{@{}c@{}}0.045 \\ (0.03)\end{tabular} &       
+\begin{tabular}[c]{@{}c@{}}0.085 \\ (0.02)\end{tabular} &  
+\begin{tabular}[c]{@{}c@{}}-0.04 \\ (0.10)\end{tabular} &    
+\begin{tabular}[c]{@{}c@{}}0.04 \\ (0.03)\end{tabular} &  
+\begin{tabular}[c]{@{}c@{}}0.08 \\ (0.01)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}-0.03 \\ (0.07)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}0.04 \\ (0.03)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}0.08 \\ (0.01)\end{tabular} 
+\\ \hline                                                                              
+\textbf{\begin{tabular}[c]{@{}c@{}}Mean Estimated \\ Sample Size (Std.)\end{tabular}}    & 
+\begin{tabular}[c]{@{}c@{}}19,479 \\ (5,556)\end{tabular} &          
+\begin{tabular}[c]{@{}c@{}}24,539 \\ (2,644)\end{tabular} &       
+\begin{tabular}[c]{@{}c@{}}27,841 \\ (1,427)\end{tabular} &  
+\begin{tabular}[c]{@{}c@{}}19,869 \\ (4,486)\end{tabular} &    
+\begin{tabular}[c]{@{}c@{}}24,440 \\ (2,050)\end{tabular} &  
+\begin{tabular}[c]{@{}c@{}}27,658 \\ (1,052)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}20,211 \\ (3,254)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}24,236 \\ (1,700)\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}28,004 \\ (871)\end{tabular} 
+\\ \hline                                                                              
 \textbf{\begin{tabular}[c]{@{}c@{}} Verification Simulations \end{tabular}}
 & 500  & 500  & 500  & 500  & 500  & 500   & 500    & 500  & 500                                          
-\\ \hline                                                                              
-\textbf{\begin{tabular}[c]{@{}c@{}} Total Simulations \\ Required\end{tabular}} 
-& 800 & 1,000 & 1,200 & 1,100 & 1,500 & 1,900 & 1,400 & 2,000 & 2,600                                        \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Mean Run Time (Min.)\end{tabular}} & 10.3 & 10.2 & 14.9  & 14.5 & 17.8  & 25.0 & 18.7    
-& 23.1 & 35.0                                                                                                                                                                                                                                                        \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Mean Error: \\ \small{Est. Power - Desired Power}\end{tabular}}   
-& 0.012	& 0.048	& 0.046	& 0.043 & 0.033 & 0.041	& 0.025 & 0.026	& 0.042
-\\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Std. of Error\\ \small{Est. Power - Desired Power}\end{tabular}} 
-& 0.094 & 0.057 & 0.043 & 0.07 & 0.052 & 0.037 & 0.084 & 0.034 & 0.028
 \end{tabular}
 \end{table}
 \begin{center}
-Simulations were conducted using a single thread (Intel Xeon CPU E5-2670).
+Simulations were conducted on dual Intel Xeon CPU E5-2670 processors.
 \end{center}
 \end{landscape}
 
@@ -115,40 +132,41 @@ Here, $\alpha$ is the probability of a Type I error (false rejection of the NULL
 
 
 \newpage
+
 \begin{landscape}
-\begin{table}[]
+\begin{center}
+\Large{Required Sample Size Estimates Taken Via Analysis of Residual Variance}
+\end{center}
+\begin{table}[h]
+\small\addtolength{\tabcolsep}{-1pt}
 \begin{tabular}{c|cccccccccccccccc}
-& \textbf{\begin{tabular}[c]{@{}c@{}}I\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}II\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}III\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}IV\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}V\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}VI\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}VII\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}VIII\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}IX\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}X\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}XI\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}XII\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}XIII\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}XIV\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}XV\end{tabular}} 
-& \textbf{\begin{tabular}[c]{@{}c@{}}XVI\end{tabular}} 
-\\ \hline        
-\textbf{\begin{tabular}[c]{@{}c@{}}Diff. in \\ Estimated \\ Power \\(Mean)\end{tabular}}   
-& -0.723	& -0.683	& -.541	& -0.387 & 0.198 & 0.199 & 0.199 & 0.143 & 0.199 & 0.199 & 0.199 & 0.105	& 0.189 & 0.192	& 0.185 & -0.124 \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}} Diff. in \\ Estimated \\ Power \\(Std.)\end{tabular}}   
-& 0.011	& 0.014	& 0.018	& -0.022 & 0.002 & 0.0009 & 0.001 & 0.01 & 0.0009 & 0.0007 & 0.0009 & 0.01	& 0.004 & 0.003	& 0.005 & 0.023 \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Mean \\ Estimated \\ Sample \\ Size\end{tabular}}   
-& 31	& 123	& 689	& 3,836 & 3,836 & 14,017 & 83,711 & 460,231 & 3,847 & 14,055 & 83,954 & 461,663	& 4,093 & 14,904	& 88,932 & 491,528 \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Std. of \\ Estimated \\ Sample \\ Sizes\end{tabular}}   
-& 31	& 123	& 689	& 3,836 & 3,836 & 14,017 & 83,711 & 460,231 & 3,847 & 14,055 & 83,954 & 461,663	& 4,093 & 14,904	& 88,932 & 491,528 \\ \hline
-\textbf{\begin{tabular}[c]{@{}c@{}}Mean \\ Adjusted \\ $R^2$ \end{tabular}}   
-& 0.99	& 0.96 & 0.94 & 0.93 & 0.49 & 0.41 & 0.38 & 0.38 & 0.36 & 0.36 & 0.36 & 0.36 & 0.004 & 0.001 & 0.0 & 0.0 \\ \hline                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-\textbf{\begin{tabular}[c]{@{}c@{}} Verification \\ Simulations \end{tabular}}
-& 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500 & 500                                         
+                                                                                         & \textbf{I}                                               & \textbf{II}                                              & \textbf{III}                                             & \textbf{IV}                                               & \textbf{V}                                              & \textbf{VI}                                              & \textbf{VII}                                            & \textbf{VIII}                                          & \textbf{IX}                                              & \textbf{X}                                               & \textbf{XI}                                              & \textbf{XII}                                           & \textbf{XIII}                                           & \textbf{XIV}                                            & \textbf{XV}                                             & \textbf{XVI}                                             \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}\small{Mean Diff.} \\ \small{in Estimated} \\ \small{Power (Std.)}\end{tabular}} & \begin{tabular}[c]{@{}c@{}}\small{-0.723}\\ \smaller{(0.011)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{-0.683}\\ \smaller{(0.014)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{-0.541}\\ \smaller{(0.018)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{-0.387}\\ \smaller{(-0.022)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.198}\\ \smaller{(0.002)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.199}\\ \smaller{($<$0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.199}\\ \smaller{($<$0.01})\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.143}\\ \smaller{(0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.199}\\ \smaller{($<$0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.199}\\ \smaller{($<$0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.199}\\ \smaller{($<$0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.105}\\ \smaller{(0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.189}\\ \smaller{($<$0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.192}\\ \smaller{($<$0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{0.185}\\ \small{($<$0.01)}\end{tabular} & \begin{tabular}[c]{@{}c@{}}\small{-0.124}\\ \smaller{(0.023)}\end{tabular} \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}\small{Mean} \\  \small{Estimated} \\ \small{Sample} \\ \small{Size (Std.)}\end{tabular}}    & 
+\begin{tabular}[c]{@{}c@{}}\small{31} \\ \small{(0.43)}\end{tabular} &          
+\begin{tabular}[c]{@{}c@{}}\small{123} \\ \small{(1.2)}\end{tabular} &       
+\begin{tabular}[c]{@{}c@{}}\small{689} \\ \small{(5.7)}\end{tabular} &  
+\begin{tabular}[c]{@{}c@{}}\small{3,836} \\ \small{(36.2)}\end{tabular} &    
+\begin{tabular}[c]{@{}c@{}}\small{3,836} \\ \small{(19.2)}\end{tabular} &  
+\begin{tabular}[c]{@{}c@{}}\small{14,017} \\ \small{(68.0)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{83,711} \\ \small{(435.7)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{460,231} \\ \small{(2,183.2)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{3,847} \\ \small{(23.6)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{14,055} \\ \small{(77.07)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{83,954} \\ \small{(512.8)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{461,663} \\ \small{(2370.2)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{4,093} \\ \small{(25.6)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{14,904} \\ \small{(84.3)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{88,932} \\ \small{(504.0)}\end{tabular} &
+\begin{tabular}[c]{@{}c@{}}\small{491,528} \\ \small{(2,927.6)}\end{tabular}               
+\\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Mean \\ Adjusted $R^2$ \end{tabular}}   & 0.99                                                     & 0.96                                                     & 0.94                                                     & 0.93                                                      & 0.49                                                    & 0.41                                                     & 0.38                                                    & 0.38                                                   & 0.36                                                     & 0.36                                                     & 0.36                                                     & 0.36                                                   & 0.004                                                   & 0.001                                                   & 0.0                                                     & 0.0                                                      \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Verification \\ Simulations\end{tabular}}             & 500                                                      & 500                                                      & 500                                                      & 500                                                       & 500                                                     & 500                                                      & 500                                                     & 500                                                    & 500                                                      & 500                                                      & 500                                                      & 500                                                    & 500                                                     & 500                                                     & 500                                                     & 500                                                     
 \end{tabular}
 \end{table}
+\begin{center}
+Simulations were conducted on dual Intel Xeon CPU E5-2670 processors.
+\end{center}
 \end{landscape}
 
 
