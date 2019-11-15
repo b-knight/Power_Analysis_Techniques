@@ -88,7 +88,7 @@ We repeat this process for 100 times for each point, and then feed each point's 
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/sixteen_model_results.png" align="middle" width="948" height="396" />
 </div>
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/results_table.png" align="middle" width="940" height="401" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/results_table_v2.png" align="middle" width="1000" height=330" />
 </div>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With the exception of the 16th and final framework, the results fall into two broad categories. Frameworks 5 through 15 all overestimated the required sample size. 
