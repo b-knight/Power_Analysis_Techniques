@@ -54,7 +54,33 @@ ___
           results.append(0)
 ```
 <br>
-We repeat this process for 100 times for each point, and then feed each point's mean value to Scipy. Due to the random nature of the sample, there will be occasions when the estimated points do not increase monotonically, causing *Curve Fit* to fail. This problem occurs less and less frequently the more simulations per point we use, but for this exercise we just draw a fresh random sample. Once Scipy has approximated the equation of the curve, we extract the final sample size recommendation and verify the results with a final set of 500 simulations. Our estimated effective power is the proportion of those 500 simulations in which we found the coefficient estimate of the treatment variable to be significant at &#945; < 0.05. Because an individual trial can always be a fluke, we repeat the entire process 100 times to build a reasonable distribution.<br>
+We repeat this process for 100 times for each point, and then feed each point's mean value to Scipy. Due to the random nature of the sample, there will be occasions when the estimated points do not increase monotonically, causing Curve Fit to fail. This problem occurs less and less frequently the more simulations per point we use, but for this exercise we just draw a fresh random sample. Once Scipy has approximated the equation of the curve, we extract the final sample size recommendation and verify the results with a final set of 500 simulations. 
+
+```python
+   import numpy as np
+   from scipy.optimize import curve_fit
+
+   desired_power = 0.8
+
+   def exp_func(x, a, b, c):
+       return a * np.exp(-b * x) + c
+
+   eta = []
+   for i in results:
+       eta.append(i)
+   eta = np.asarray(eta)
+
+   cdf = []
+   for i in points:
+       cdf.append(i)
+   cdf = np.asarray(cdf)
+
+   popt, pcov = curve_fit(exp_func, eta, cdf)
+   recommended_n = int(popt[0]*np.exp(-(popt[1]) * (desired_power)) + popt[2])
+   ```
+   
+<br>
+Our estimated effective power is the proportion of those 500 simulations in which we found the coefficient estimate of the treatment variable to be significant at &#945; < 0.05. Because an individual trial can always be a fluke, we repeat the entire process 100 times to build a reasonable distribution.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; From here we tweak the number of points in our implementation using +/- 1 SD (n = 30k, 40k, 50k), +/- 1,2 SDs (n = 20k, 30k, 40k, 50k, 60k), and +/- 1,2,3 SDs (n = 10k, 20k, 30k, 40k, 50k, 60k, 70k). We also explore estimating each of these points with 100, 200, or 300 simulations each (the verification step is held fixed at 500 simulations). All told, we use a total of 9 methods (405,000 simulations) the results of which are displayed in the boxplots and table below.<br><br>
 
 <div align="center"> 
