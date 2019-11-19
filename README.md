@@ -78,7 +78,6 @@ We repeat this process for 100 times for each point, and then feed each point's 
    popt, pcov = curve_fit(exp_func, eta, cdf)
    recommended_n = int(popt[0]*np.exp(-(popt[1]) * (desired_power)) + popt[2])
    ```
-   
 <br>
 Our estimated effective power is the proportion of those 500 simulations in which we found the coefficient estimate of the treatment variable to be significant at &#945; < 0.05. Because an individual trial can always be a fluke, we repeat the entire process 100 times to build a reasonable distribution.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; From here we tweak the number of points in our implementation using +/- 1 SD (n = 30k, 40k, 50k), +/- 1,2 SDs (n = 20k, 30k, 40k, 50k, 60k), and +/- 1,2,3 SDs (n = 10k, 20k, 30k, 40k, 50k, 60k, 70k). We also explore estimating each of these points with 100, 200, or 300 simulations each (the verification step is held fixed at 500 simulations). All told, we use a total of 9 methods (405,000 simulations) the results of which are displayed in the boxplots and table below.<br><br>
@@ -97,7 +96,7 @@ Our estimated effective power is the proportion of those 500 simulations in whic
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In this strategy, we use the standard formula for sample size as if we were implementing a difference of means t-test. The key step is estimating an appropriate effect size for the sample size calculation. To this end, we use a series of regression outputs - assuming that the true effect size is baked into the variance of the resulting residuals. Before getting into details, let's review how required sample size is calculated in the context of a t-test.<br><br>
 
 <div align="center">
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/variance_of_residuals/formula_for_ttest_sample_size.png" align="middle" width="434" height="76" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_2_variance_of_residuals/formula_for_ttest_sample_size.png" align="middle" width="434" height="76" />
 </div><br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In the formula above, the required sample size (n) is a function of the desired level of statistical significance and the desired amount of statistical power normalized by the effect size. In the numerator, &#945; is the probability of a Type I error (false rejection of the NULL hypothesus, i.e. a false positive) and &#946; is the probability of a Type II error (i.e. a false negative). If we want to make our test more rigorous and reduce the false positive rate, then we increase the value of the left side of the numerator which induces an increase in the recommended sample size. Similarly, if we want to reduce the probability that we fail to detect an actual difference across groups (i.e. the NULL hypothesis is false), then we will need to increase the right-hand side of the numerator. In this way, the numerator captures what we want from the test and how stringent we want to be in to achieving it. Meanwhile the denominator is the ratio between the hypothesized difference (the treatment mean and the control mean) and the underlying variation in the metric of interest, a.k.a. our signal-to-noise ratio.<br> 
