@@ -19,8 +19,8 @@ ___
 <div>
 <div align="center">
 <p align="center"><b>Figure 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Figure 2</b></p>
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_1.png" align="middle" width="422" height="216" />
- <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_2.png" align="middle" width="422" height="216" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/approximating_the_power_curve_image_1.png" align="middle" width="422" height="216" />
+ <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/approximating_the_power_curve_image_2.png" align="middle" width="422" height="216" />
 </div>
 </div>
 <br>
@@ -28,8 +28,8 @@ ___
 <div>
 <div align="center">
  <p align="center"><b>Figure 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Figure 4</b></p>
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_3.png" align="middle" width="422" height="216" />
- <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation/approximating_the_power_curve_image_4.png" align="middle" width="422" height="216" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/approximating_the_power_curve_image_3.png" align="middle" width="422" height="216" />
+ <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/approximating_the_power_curve_image_4.png" align="middle" width="422" height="216" />
 </div>
 </div>
 
@@ -59,7 +59,7 @@ We repeat this process for 100 times for each point, and then feed each point's 
 
 <div align="center"> 
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/nine_model_results.png" align="middle" width="994" height="415" />
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/power_curve_estimation_v2/nine_model_results_table.png" align="middle" width="1023" height="346" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/nine_model_table.png" align="middle" width="1003" height="400" />
 </div>
 <br>
 
