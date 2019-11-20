@@ -89,7 +89,7 @@ recommended_n = int(popt[0]*np.exp(-(popt[1]) * (desired_power)) + popt[2])
 
 <div align="center"> 
 <img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/nine_model_results.png" align="middle" width="994" height="415" />
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/nine_model_table_v2.png" align="middle" width="1003" height="400" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/part_I_power_curve_estimation/nine_model_table_v2.png" align="middle" width="852" height="321" />
 </div>
 <br>
 
