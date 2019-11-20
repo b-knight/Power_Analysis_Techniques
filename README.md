@@ -35,23 +35,23 @@ ___
 
 #### Optimizing Curve Inference
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In the example above we employed a total of 4,000 hypothetical simulations - 3,000 to infer the broad countour of the power curve, and an addition 1,000 to verify the predicted statistical power. The fact that our estimate was slightly off begs the question of whether there are more effective approaches to deploying these simulations. One approach might be to provide Scipy with additional points. If we were able to achieve a somewhat decent approximation with three points, then it reckons that we should be able to achieve a better fit by providing additional information. However, let's say that we have a fair number of (impatient) users needing to launch experiments and that 4,000 simulations is the maximum amount of compute we can feasibly expend for a single power analysis. In this scenario, providing Scipy with six points as opposed to three points implies that we can only use 500 versus 1,000 simulations per point. We will necessarily incur a loss of precision. If we imagine that are on a fishing expedition for the 'true' shape of the power curve, then simulating more hypothetical sample sizes would be the equivalent of using a wider net, whereas using more simulations per point would be comparable to using a finer mesh - increasing both can only improve the likelihood of capturing our quarry, but we are still left with the issue of how best to deploy scarce resources.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creating some actual data allows us to demonstrate this trade-off more concretely. Let's say that we are interested in assessing the impact of some program designed to increase customer spend per order. We simulate one million customers, each having a a base order amount that is normally distributed with a mean of $100 and a standard deviation of $25. These customers are randomly assigned to a treatment or control group and in the event of the former, their mean order amount is then scaled by a factor of 1.01 (our treatment effect is a 1% relative increase). In addition, these customers can choose to shop at 1,000 simulated retailers. Some retailers are pricier than others, so we capture this by assigning each retailer a random scalar from a normal distribution of mean 1.0 and a standard deviation of 0.05. In the grocery business, day-of-week seasonality matters. If I place my order on a weekend, there is a high chance that I'm stocking up on enough groceries to last the week. An order placed on a Wednesday will tend to be smaller by comparison. To reflect this, let's add some linearly distributed scalars in the range [0.7,1.3] (i.e. Monday orders are scaled to 70% whereas Sunday orders are scaled to 130%). Let's assume that order volume is exponentially distributed, with a select number of customers placing orders with far greater frequency than the median customer. Lastly, we introduce some additional noise that is normally distributed (mean of $10, standard deviation of $1).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creating some actual data allows us to demonstrate this trade-off more concretely. Let's say that we are interested in assessing the impact of some program designed to increase customer spend per order. We simulate one million customers, each having a a base order amount that is normally distributed with a mean of $100 and a standard deviation of $25. These customers are randomly assigned to a treatment or control group and in the event of the former, their mean order amount is then scaled by a factor of 1.01 (our treatment effect is a 1% relative increase). In addition, these customers can choose to shop at 1,000 simulated retailers. Some retailers are pricier than others, so we capture this by assigning each retailer a random scalar from a normal distribution of mean 1.0 and a standard deviation of 0.05. In the grocery business, day-of-week seasonality matters. If I place my order on a weekend, there is a high chance that I'm stocking up on enough groceries to last the week. An order placed on a Wednesday will tend to be smaller by comparison. To reflect this, let's add some linearly distributed scalars in the range [0.7,1.3] (i.e. Monday orders are scaled to 70% whereas Sunday orders are scaled to 130%). Let's assume that order volume is exponentially distributed, with a select number of customers placing orders with far greater frequency than the median customer. Lastly, we introduce some additional noise that is normally distributed (mean of $10, standard deviation of $1).<br><br>
 <div align="center"> 
-<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/images/latex_files/the_model.png" align="middle" width="568" height="320" />
+<img src="https://github.com/b-knight/Power_Analysis_Techniques/blob/master/images/latex_files/the_model.png" align="middle" width="625" height="352" />
 </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Now that we have specified the data generating process, let's assess different approaches to inferring the power curve (our target power is 0.8). Let's say that previous A/B tests of this nature consisted of 40,000 observations, but have historically varied in their sample sizes with a standard deviation of 10,000 observations. Our first attempt (Method I) elects three candidate sample sizes of 30,000, 40,000, and 50,000 observations. For each of the three candidate sample sizes we draw a random sample of the corresponding size and then estimate the coefficient for the treatment effect using ordinary least squares using Python's Statsmodels package. Because order amounts are clustered on customers (Customer_ID), we need to instruct Statsmodels to use robust clustered standard errors: <br><br>
 
 ```python
-      import statsmodels.api as sm
+import statsmodels.api as sm
 
-      results = []
-      model = sm.OLS(Y, X).fit(method='pinv').get_robustcov_results(
-              'cluster', groups = df.Customer_ID, 
-               use_correction=True, df_correction=True)
-      if model.pvalues[1] < 0.05:
-          results.append(1)    
-      else:
-          results.append(0)
+results = []
+model = sm.OLS(Y, X).fit(method='pinv').get_robustcov_results(
+        'cluster', groups = df.Customer_ID, 
+         use_correction=True, df_correction=True)
+if model.pvalues[1] < 0.05:
+    results.append(1)    
+else:
+    results.append(0)
 ```
 <br>
 We repeat this process for 100 times for each point, and then feed each point's mean value to Scipy. Due to the random nature of the sample, there will be occasions when the estimated points do not increase monotonically, causing Curve Fit to fail. This problem occurs less and less frequently the more simulations per point we use, but for this exercise we just draw a fresh random sample. Once Scipy has approximated the equation of the curve, we extract the final sample size recommendation and verify the results with a final set of 500 simulations. 
