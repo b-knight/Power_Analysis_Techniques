@@ -328,6 +328,24 @@ def interpolate_recommendation(data,
                     results.append(supp_power)
                     candidates.append(supp_n)
                     
+            elif max(results) < desired_power:
+                print("Specified range for isotonic regression failed to capture desired power.")
+                print("Now supplementing range.")
+                supp_n = int(max(candidates)*2)
+                supp_power = assess_power(data, supp_n, treatment_variable, 
+                                     covariates, dependent_variable, rejection_region, sims)
+                sims_used += sims
+                delta = abs(supp_power - power)
+                if delta < precison:
+                    print("Recommended sample size was attained after {:,} simulations with ".format(sims_used) +\
+                          "(n = {:,}, power = {}%).".format(supp_n, round(supp_power*100, 2)))
+                    print("The results meet the required precision of +/- {} ".format(round(precison*100,1)) +\
+                          "points of statistical power.")
+                    return supp_n, supp_power, supp_n, supp_power, sims_used
+                else:
+                    results.append(supp_power)
+                    candidates.append(supp_n)
+                    
             iso_reg = IsotonicRegression().fit(results, candidates)
             recommendation = int(iso_reg.predict([desired_power]))
             
