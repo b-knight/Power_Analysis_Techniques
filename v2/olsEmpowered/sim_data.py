@@ -13,10 +13,12 @@ class sim_data:
     def __init__(self, dv_name = None, dv_cardinality = None,
                  absolute_effect_size = None,
                  sample_size = None, covariates_dict = None,
+                 noise_loc = None, noise_scale = None,
                  data_path = None, meta_data_path = None):
                       
         # create data generating method
-        def create_dataframe(absolute_effect_size, covariates_dict, sample_size):
+        def create_dataframe(absolute_effect_size, covariates_dict, 
+                             sample_size, noise_loc, noise_scale):
             data_dict = {}
 
             for key in covariates_dict:
@@ -62,6 +64,11 @@ class sim_data:
             df['treated'] = np.where(df['prob'] <= 0.5, 1, 0)
             df['absolute_effect_size'] = np.where(df['prob'] <= 0.5, 
                                          absolute_effect_size, 0.0)
+
+            # add noise
+            df['noise'] = list(np.random.normal(loc   = noise_loc, 
+                                                scale = noise_scale, 
+                                                size  = sample_size))    
             del df['prob']
             return df
 
@@ -69,6 +76,7 @@ class sim_data:
         if ((dv_name is not None) & (dv_cardinality is not None)
         & (sample_size is not None) & (covariates_dict is not None)
         & (absolute_effect_size is not None)
+        & (noise_loc is not None) & (noise_scale is not None)
         & (data_path == None) & (meta_data_path == None)):
 
             start = time.time()
@@ -80,15 +88,17 @@ class sim_data:
 
             # create data
             try:
-                df = create_dataframe(absolute_effect_size, covariates_dict, sample_size)
+                df = create_dataframe(absolute_effect_size, covariates_dict, sample_size, 
+                                      noise_loc, noise_scale)
                 command_str = "df['{}'] = ".format(dv_name)
                 for key in covariates_dict:
                     command_str += "df['{}']*({}) + ".format(key, covariates_dict.get(key)[2])
-                command_str += "df['absolute_effect_size']"
+                command_str += "df['absolute_effect_size'] + df['noise']"
                 exec(command_str)                
                 df['ID'] = list(range(1, sample_size + 1,1))
                 del df['absolute_effect_size']
                 labels_order = ['ID', dv_name, 'treated'] + list(covariates_dict.keys())
+                labels_order.append('noise')
                 df = df[labels_order]
 
                 # create log file
@@ -96,10 +106,13 @@ class sim_data:
                 items_to_log.update({'file_name': data_file_name})
                 items_to_log.update({'dv_name': dv_name})
                 items_to_log.update({'dv_cardinality': dv_cardinality})
+                items_to_log.update({'treatment_variable': 'treated'})
                 items_to_log.update({'absolute_effect_size': absolute_effect_size})
                 items_to_log.update({'sample_size': sample_size})
                 items_to_log.update({'covariates': covariates_dict})
                 description = pd.DataFrame(df.describe()).to_dict()
+                items_to_log.update({'noise_loc': noise_loc})
+                items_to_log.update({'noise_scale': noise_scale})
                 items_to_log.update({'stats': description})
 
                 # create dir
@@ -117,7 +130,7 @@ class sim_data:
                 log_file_name = current_dir + "/data/log_files/" + data_file_name[0:-4] + "_log_file.txt"
                 with open(log_file_name, 'w') as file:
                      file.write(json.dumps(items_to_log))
-                print("Meta-data was saved to: \n     {}.".format("./data/log_files/" + \
+                print("Meta-data was saved to: \n     {}.".format(current_dir + "/data/log_files/" + \
                       data_file_name[0:-4] + "_log_file.txt"))
 
                 # report time
@@ -139,6 +152,8 @@ class sim_data:
                 self.data_file_location      = current_dir + '/data'
                 self.meta_data_file_name     = data_file_name[0:-4] + "_log_file.txt"
                 self.meta_data_file_location = current_dir + '/data/log_files'
+                self.noise_loc               = noise_loc
+                self.noise_scale             = noise_scale
                 self.stats                   = description
                 self.data                    = df
                 
@@ -149,6 +164,7 @@ class sim_data:
         elif ((dv_name is None) & (dv_cardinality is None)
         & (sample_size is None) & (covariates_dict is None)
         & (absolute_effect_size is None)
+        & (noise_loc is None) & (noise_scale is None)
         & (data_path != None) & (meta_data_path != None)):
             try:
                 df = pd.read_csv(data_path) 
@@ -171,6 +187,8 @@ class sim_data:
                     self.data_file_location      = meta_data.get('data_file_location')
                     self.meta_data_file_name     = meta_data.get('meta_data_file_name')
                     self.meta_data_file_location = meta_data.get('meta_data_file_location')
+                    self.noise_loc               = meta_data.get('noise_loc')
+                    self.noise_scale             = meta_data.get('noise_scale')
                     self.stats                   = meta_data.get('stats')
                     self.data                    = df                    
                     
@@ -184,48 +202,4 @@ class sim_data:
             print("Enter the name and cardinality of the dependent variable, the absolute effect size,")
             print("the number of observations to be created, and a dictionary of covariates, or specify")
             print("the path to the appropriate data (.csv file) and meta-data (.txt file).")
-            
-    # getters
-    def dv_name(self):
-        return dv_name
-    
-    def dv_name(self):
-        return dv_cardinality   
-    
-    def treatment_variable(self):
-        return treatment_variable 
-    
-    def absolute_effect_size(self):
-        return absolute_effect_size  
-        
-    def sample_size(self):
-        return sample_size
-    
-    def covariates(self):
-        return covariates
-    
-    def data_file_name(self):
-        return data_file_name
-    
-    def data_file_location(self):
-        return data_file_location  
-    
-    def meta_data_file_name(self):
-        return meta_data_file_name  
-    
-    def meta_data_file_location(self):
-        return meta_data_file_location  
-    
-    def stats(self):
-        return description
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
    
