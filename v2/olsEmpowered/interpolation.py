@@ -71,7 +71,7 @@ class interpolation:
         if candidate_n > self.sample_size:
             print("The proposed size of the sub-sample exceeded the size of the parent sample.")
         else:
-            print("Estimating the effective power of n = {:,} using {} simulations.".format(candidate_n, sims))
+            print("Estimating the effective power of n = {:,} using {:,} simulations.".format(candidate_n, sims))
             start = time.time()
             covariates = list(self.covariates.keys())
             covariates.append(self.treatment_variable)

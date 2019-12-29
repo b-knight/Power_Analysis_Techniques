@@ -1,19 +1,22 @@
 import pandas as pd
 from olsEmpowered import interpolation
 
-class naive_bst(interpolation.interpolation):
+class binary_search(interpolation.interpolation):
 
     # constructor
     def __init__(self, sim_data_ob,
                  rejection_region = 0.05,
-                 desired_power = 0.8,
-                 precision = 0.025,
-                 sims_per_point = 200):
+                 desired_power    = 0.8,
+                 precision        = 0.025,
+                 sims_per_point   = 200,
+                 search_orders    = 1,
+                 informed         = 1):
         
         # set class variables
         self.rejection_region     = rejection_region
         self.desired_power        = desired_power
         self.precision            = precision
+        self.search_orders        = search_orders
         self.dv_name              = sim_data_ob.dv_name     
         self.dv_cardinality       = sim_data_ob.dv_cardinality  
         self.treatment_variable   = sim_data_ob.treatment_variable  
@@ -22,15 +25,26 @@ class naive_bst(interpolation.interpolation):
         self.covariates           = sim_data_ob.covariates       
         self.data                 = sim_data_ob.data
         self.sims_per_point       = sims_per_point
+        self.informed             = informed
         
         
     def preliminary_screen(self):
         
         result_dict = {}      
-        ub          = len(self.data)
-        mid         = int(len(self.data)/2)
+        
+        if self.informed == 1:
+            ub      = self.set_upper_bound()
+            mid     = self.set_starting_value()  
+            print("Binary search commenced, centered on n = " +
+                  "{:,} informed by residual variance.".format(mid))
+        else:
+            ub      = len(self.data)
+            mid     = int(len(self.data)/2)
+            print("Binary search commenced, naively centered on n = {:,}.".format(mid))
+            
         results     = []
         candidates  = []
+        
         sims_used   = 0
         time_taken  = 0
 
@@ -49,7 +63,7 @@ class naive_bst(interpolation.interpolation):
                 result_dict.update({'sims_used': sims_used})
                 result_dict.update({'seconds_used': time_taken})
                 result_dict.update({'status': 0})
-                print("Naive binary search captured the desired power of " +
+                print("Binary search captured the desired power of " +
                       "{} (n = {:,}).".format(self.desired_power, i))
                 return result_dict      
             
@@ -59,7 +73,7 @@ class naive_bst(interpolation.interpolation):
                 result_dict.update({'sims_used': sims_used})
                 result_dict.update({'seconds_used': time_taken})
                 result_dict.update({'status': 1})
-                print("Naive binary search suggested the region of " +
+                print("Binary search suggested the region of " +
                       "n = ({:,}, {:,}).".format(0, mid))
                 return result_dict
             
@@ -69,7 +83,7 @@ class naive_bst(interpolation.interpolation):
                 result_dict.update({'sims_used': sims_used})
                 result_dict.update({'seconds_used': time_taken})
                 result_dict.update({'status': -1})
-                print("Naive binary search suggested the region of " +
+                print("Binary search suggested the region of " +
                       "n = ({:,}, {:,}).".format(mid, ub))
                 return result_dict
             
@@ -159,8 +173,7 @@ class naive_bst(interpolation.interpolation):
         return current_n, current_p, df        
         
 
-    def naive_bst(self):
-        print("Commencing power estimation via binary search (no starting value was specified).")
+    def binary_search(self):
         preliminary_dict = self.preliminary_screen()
         current_n, current_p, recursion_dict = self.binary_parent(preliminary_dict)
         final_n, final_p, results = self.combine_dfs(current_n, current_p, 

@@ -1,17 +1,18 @@
 import numpy as np
 import pandas as pd
+from scipy.optimize import curve_fit
 from olsEmpowered import interpolation
-from sklearn.isotonic import IsotonicRegression
 
-class isotonic(interpolation.interpolation):
+
+class logarithmic(interpolation.interpolation):
 
     # constructor
     def __init__(self, sim_data_ob,
                  rejection_region = 0.05,
-                 desired_power = 0.8,
-                 precision = 0.025,
-                 search_orders = 1,
-                 sims_per_point = 200):
+                 desired_power    = 0.8,
+                 precision        = 0.025,
+                 search_orders    = 1,
+                 sims_per_point   = 200):
         
         # set class variables
         self.rejection_region     = rejection_region
@@ -27,17 +28,17 @@ class isotonic(interpolation.interpolation):
         self.data                 = sim_data_ob.data
         self.sims_per_point       = sims_per_point
         
-            
-    def isotonic_interpolation(self):
+        
+    def logarithmic_interpolation(self):
 
-        results_dict = {}
-        parent_candidates   = []               
-        parent_results      = []
+        results_dict      = {}
+        parent_candidates = []               
+        parent_results    = []
               
         parent_candidates.append(self.set_lower_bound())
         parent_candidates.append(self.set_starting_value())
         parent_candidates.append(self.set_upper_bound())
-                
+        
         parent_sims_used    = 0
         parent_seconds_used = 0
         
@@ -47,8 +48,12 @@ class isotonic(interpolation.interpolation):
             parent_sims_used    += sims_used
             parent_seconds_used += secs_taken
             
-        if parent_results[0] <= 0.05:
-            j = int(parent_candidates[0] + ((parent_candidates[1] - parent_candidates[0])/2))
+            
+        left_end = 0   
+        while parent_results[left_end] <= 0.10:
+            print("increasing lb")
+            j = int(parent_candidates[left_end] + 
+                    ((parent_candidates[left_end + 1] - parent_candidates[left_end])/2))
             parent_candidates.append(j)
             power_est, sims_used, secs_taken = self.assess_power(j, self.sims_per_point)
             parent_results.append(power_est)
@@ -56,9 +61,13 @@ class isotonic(interpolation.interpolation):
             parent_seconds_used += secs_taken  
             parent_candidates.sort() 
             parent_results.sort() 
-            
-        if parent_results[-1] >= 0.95:
-            k = int(parent_candidates[-2] + ((parent_candidates[-1] - parent_candidates[-2])/2))
+            left_end += 1
+        
+        right_end = -1
+        while parent_results[right_end] >= 0.90:
+            print("decreasing ub")
+            k = int(parent_candidates[right_end] - 
+                    ((parent_candidates[right_end] - parent_candidates[right_end - 1])/2))
             parent_candidates.append(k)
             power_est, sims_used, secs_taken = self.assess_power(k, self.sims_per_point)
             parent_results.append(power_est)
@@ -66,11 +75,20 @@ class isotonic(interpolation.interpolation):
             parent_seconds_used += secs_taken
             parent_candidates.sort() 
             parent_results.sort() 
+            right_end -= 1
 
         current_n = 0
         current_p = 0
 
-        def isotonic_child(iso_candidates, iso_results):
+        
+        def func(x, a, b):
+            return a*np.log(x)+ b
+        
+#         def func(x,a,b,c):
+#             return a * np.exp(-b * x) + c
+        
+        def logarithmic_child(logarithmic_candidates, 
+                              logarithmic_results):
 
             nonlocal current_n 
             nonlocal current_p
@@ -78,9 +96,10 @@ class isotonic(interpolation.interpolation):
             nonlocal parent_results 
             nonlocal parent_sims_used
             nonlocal parent_seconds_used
-
-            iso_reg = IsotonicRegression().fit(iso_results, iso_candidates)
-            current_n = int(iso_reg.predict([self.desired_power])) 
+                        
+            popt, pcov = curve_fit(func, logarithmic_results, 
+                                   logarithmic_candidates)
+            current_n = int(func(0.8, *popt))
             parent_candidates.append(current_n)
             current_p, sims_used, secs_taken = self.assess_power(current_n, 
                                                                  self.sims_per_point)
@@ -88,19 +107,21 @@ class isotonic(interpolation.interpolation):
             parent_sims_used    += sims_used
             parent_seconds_used += secs_taken
 
-            return iso_candidates, iso_results   
+            return logarithmic_candidates, logarithmic_results  
 
-        iso_candidates = parent_candidates
-        iso_results    = parent_results  
+        logarithmic_candidates = parent_candidates
+        logarithmic_results    = parent_results  
 
         while abs(current_p - self.desired_power) > self.precision:
-            iso_candidates, iso_results = isotonic_child(iso_candidates, 
-                                                         iso_results)
+            logarithmic_candidates, logarithmic_results = logarithmic_child(logarithmic_candidates, 
+                                                                            logarithmic_results)
 
-        results_dict.update({'candidates': iso_candidates})
-        results_dict.update({'power': iso_results})
+        results_dict.update({'candidates': logarithmic_candidates})
+        results_dict.update({'power': logarithmic_results})
         results_dict.update({'sims_used': parent_sims_used})
         results_dict.update({'seconds_used': parent_seconds_used})
         results_dict.update({'status': 0})
 
-        return current_n, current_p,  pd.DataFrame(results_dict) 
+        return current_n, current_p,  pd.DataFrame(results_dict)         
+
+
