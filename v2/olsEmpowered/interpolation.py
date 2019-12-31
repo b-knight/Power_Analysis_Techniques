@@ -6,6 +6,36 @@ from statistics import mean
 import statsmodels.api as sm
 
 
+
+def save_results(df, sim_data_ob):
+
+    import os
+    import pandas as pd
+
+    current_dir = os.getcwd() 
+    if not os.path.exists(current_dir + '/results'):
+        os.makedirs(current_dir + '/results') 
+    df['file_name'] = sim_data_ob.data_file_name
+    src  = str(type(sim_data_ob)).split('.')[1]
+    if src == 'binary_search':
+        if sim_data_ob.informed == 1:
+            model_type = 'informed_' + str(type(sim_data_ob)).split('.')[1]
+            df['source'] = model_type
+            
+        else:
+            model_type = 'naive_' + str(type(sim_data_ob)).split('.')[1]
+            df['source'] = model_type
+    elif src == 'isotonic':
+        model_type = 'isotonic'
+        df['source'] = str(type(sim_data_ob)).split('.')[1]
+        
+    file_loc = current_dir + '/results/' + sim_data_ob.data_file_name[0:-4] + \
+               '_' + model_type + '.csv'
+
+    df.to_csv(file_loc, index = False)
+    print("Saved the results from {}.".format(sim_data_ob.data_file_name[0:-4]))
+
+
 class interpolation:
     
     # constructor
@@ -13,29 +43,39 @@ class interpolation:
                  rejection_region = 0.05, 
                  desired_power    = 0.8,
                  precision        = 0.025,
-                 search_orders    = 1):
+                 search_orders    = 1,
+                 covariates       = None):
 
         # set class variables
-        self.rejection_region     = rejection_region
-        self.desired_power        = desired_power
-        self.precision            = precision
-        self.search_orders        = search_orders
-        self.dv_name              = sim_data_ob.dv_name     
-        self.dv_cardinality       = sim_data_ob.dv_cardinality  
-        self.treatment_variable   = sim_data_ob.treatment_variable  
-        self.absolute_effect_size = sim_data_ob.absolute_effect_size    
-        self.sample_size          = sim_data_ob.sample_size  
-        self.covariates           = sim_data_ob.covariates       
-        self.data                 = sim_data_ob.data
-    
+        self.rejection_region        = rejection_region
+        self.desired_power           = desired_power
+        self.precision               = precision
+        self.search_orders           = search_orders
+        self.dv_name                 = sim_data_ob.dv_name     
+        self.dv_cardinality          = sim_data_ob.dv_cardinality  
+        self.treatment_variable      = sim_data_ob.treatment_variable  
+        self.absolute_effect_size    = sim_data_ob.absolute_effect_size    
+        self.sample_size             = sim_data_ob.sample_size 
+        if sim_data_ob.covariates is not None:
+            self.covariates          = sim_data_ob.covariates       
+        self.data                    = sim_data_ob.data
+        self.data_file_name          = sim_data_ob.data_file_name
+        self.data_file_location      = sim_data_ob.data_file_location
+        self.meta_data_file_name     = sim_data_ob.meta_data_file_name
+        self.meta_data_file_location = sim_data_ob.meta_data_file_location
+        self.rsquared                = sim_data_ob.rsquared
+        self.rsquared_adj            = sim_data_ob.rsquared_adj 
       
     def set_starting_value(self):
         
-        covariates = list(self.covariates.keys())
-        covariates.append(self.treatment_variable)
-        covariates.reverse()
-
-        X = self.data[covariates]
+        try:
+            covariates = list(self.covariates.keys())
+            covariates.append(self.treatment_variable)
+            covariates.reverse()
+            X = self.data[covariates]
+        except:
+            X = self.data[self.treatment_variable]    
+            
         X = sm.add_constant(X)
         Y = self.data[self.dv_name]
         
@@ -64,8 +104,8 @@ class interpolation:
     def set_lower_bound(self):
         n = interpolation.set_starting_value(self)
         return int(n/(pow(10,self.search_orders)))
-        
-        
+
+    
     def assess_power(self, candidate_n, sims):
 
         if candidate_n > self.sample_size:

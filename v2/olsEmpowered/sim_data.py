@@ -5,8 +5,12 @@ import json
 import numpy as np
 import pandas as pd
 import random as rand
-from datetime import datetime   
+import statsmodels.api as sm
+from datetime import datetime
 
+
+
+##################################################################################
 def create_covariate_dict(max_covariates, 
                           permissible_distributions,
                           range_of_normal_loc, 
@@ -81,7 +85,7 @@ def create_covariate_dict(max_covariates,
 
     return initial_dict
 
-
+##################################################################################
 def create_random_dgp(range_of_normal_loc, 
                       range_of_normal_scale,
                       range_of_exponential_scale,
@@ -115,21 +119,56 @@ def create_random_dgp(range_of_normal_loc,
                                                  range_of_noise_scale[1]),
                       covariates_dict = my_dict)
 
-    sim_ob = sim_data(data_path = sim_ob.data_file_location + 
+    new_ob = sim_data(data_path = sim_ob.data_file_location + 
                                   '/' + sim_ob.data_file_name, 
                       meta_data_path = sim_ob.meta_data_file_location + 
-                                       '/' + sim_ob.meta_data_file_name)
-    return sim_ob
-
+                                  '/' + sim_ob.meta_data_file_name)
     
+    new_ob.data_file_name          = sim_ob.data_file_name
+    new_ob.data_file_location      = sim_ob.data_file_location
+    new_ob.meta_data_file_name     = sim_ob.meta_data_file_name
+    new_ob.meta_data_file_location = sim_ob.meta_data_file_location
+    
+    return new_ob 
+
+##################################################################################
+def remove_data(sim_ob, drop_meta_data = False):
+    
+    print(sim_ob.data_file_location)
+    
+    data_path = sim_ob.data_file_location + \
+              '/' + sim_ob.data_file_name
+
+    meta_data_path = sim_ob.meta_data_file_location + \
+                   '/' + sim_ob.meta_data_file_name
+    try:
+        os.remove(data_path)
+        print("The file {} was deleted.".format(sim_ob.data_file_name))
+    except Exception as e:
+        print("Failed to data file.")
+        print(str(e)[10:])
+    if drop_meta_data is True:
+        try:
+            os.remove(meta_data_path)
+            print("The the associated meta-data for file {} ".format(sim_ob.data_file_name) +
+                  "was also deleted.")
+        except Exception as e:
+            print("Failed to delete meta-data file.")
+            print(str(e)[10:])
+
+##################################################################################            
+            
 class sim_data:
 
     # constructor
-    def __init__(self, dv_name = None, dv_cardinality = None,
+    def __init__(self,           
+                 dv_name              = None, 
+                 dv_cardinality       = None,
                  absolute_effect_size = None,
                  sample_size = None, covariates_dict = None,
-                 noise_loc = None, noise_scale = None,
-                 data_path = None, meta_data_path = None):
+                 noise_loc   = None, noise_scale     = None,
+                 data_path   = None, meta_data_path  = None,
+                 rsquared    = None, rsquared_adj    = None):
           
         # create data generating method
         def create_dataframe(absolute_effect_size, 
@@ -193,6 +232,7 @@ class sim_data:
                                                 scale = noise_scale, 
                                                 size  = sample_size))    
             del df['prob']
+                   
             return df
 
         # if a data_path is not provided, create the necessary simulation data
@@ -230,6 +270,26 @@ class sim_data:
                     del df['absolute_effect_size']
                     df['ID'] = list(range(1, sample_size + 1,1))
                     df = df[['ID', dv_name, 'treated', 'noise']]
+                
+                # establish DGP parameters
+                IV = []
+                if covariates_dict is not None:
+ 
+                    for key in covariates_dict:
+                        IV.append(key)
+                    IV.append('treated')
+                    IV.reverse()
+                else:    
+                    IV.append('treated')
+   
+                X = df[IV]
+                X = sm.add_constant(X)
+                Y = df[dv_name]
+                
+                print("Now performing OLS to infer DGP parameters.")
+                
+                model = sm.OLS(Y.astype(float), X.astype(float)).fit()
+
 
                 # create log file
                 items_to_log = {}
@@ -245,6 +305,8 @@ class sim_data:
                 items_to_log.update({'noise_loc': noise_loc})
                 items_to_log.update({'noise_scale': noise_scale})
                 items_to_log.update({'stats': description})
+                items_to_log.update({'rsquared ': model.rsquared})
+                items_to_log.update({'rsquared_adj': model.rsquared_adj})
 
                 # create dir
                 if not os.path.exists(current_dir + '/data/'):
@@ -271,7 +333,7 @@ class sim_data:
                 time_sec = int(time_elapsed - (time_min*60))
                 print("{} observations of simulation data created in {} ".format(sample_size, time_min)  + \
                       "minutes and {} seconds.".format(time_sec))
-
+                          
                 # set class variables
                 self.dv_name                 = dv_name
                 self.dv_cardinality          = dv_cardinality
@@ -288,16 +350,15 @@ class sim_data:
                 self.noise_scale             = noise_scale
                 self.stats                   = description
                 self.data                    = df
-                
+                self.rsquared                = model.rsquared
+                self.rsquared_adj            = model.rsquared_adj 
+                                
             except:
                 print("Failed to generate the simulation data as specified.")
                 
         # if a data_path is present, read data instead of creating it
-        elif ((dv_name is None) & (dv_cardinality is None)
-        & (sample_size is None) 
-        & (absolute_effect_size is None)
-        & (noise_loc is None) & (noise_scale is None)
-        & (data_path != None) & (meta_data_path != None)):
+        elif (data_path != None) & (meta_data_path != None):
+            print("Reconstituting data object from file.")
             try:
                 df = pd.read_csv(data_path) 
                 print("Successfully read in the .csv file specified at:" + 
@@ -307,10 +368,7 @@ class sim_data:
                     
                     meta_string = open(meta_data_path, 'r').read()
                     meta_data = ast.literal_eval(meta_string)
-                    print('b')
-                    print("Successfully read in the meta-data specified at:" +
-                          "\n     {}.".format(meta_data_path))
-                    
+
                     # set class variables
                     self.dv_name                 = meta_data.get('dv_name')
                     self.dv_cardinality          = meta_data.get('dv_cardinality')
@@ -328,8 +386,13 @@ class sim_data:
                     self.noise_loc               = meta_data.get('noise_loc')
                     self.noise_scale             = meta_data.get('noise_scale')
                     self.stats                   = meta_data.get('stats')
-                    self.data                    = df                    
+                    self.data                    = df    
+                    self.rsquared                = meta_data.get('rsquared')
+                    self.rsquared_adj            = meta_data.get('rsquared_adj')
                     
+                    print("Successfully read in the meta-data specified at:" +
+                          "\n     {}.".format(meta_data_path))
+                       
                 except:
                     print("Failed to read in the meta-data specified at:\n     {}.".format(meta_data_path)) 
                 

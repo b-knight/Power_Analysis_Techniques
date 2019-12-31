@@ -13,19 +13,23 @@ class binary_search(interpolation.interpolation):
                  informed         = 1):
         
         # set class variables
-        self.rejection_region     = rejection_region
-        self.desired_power        = desired_power
-        self.precision            = precision
-        self.search_orders        = search_orders
-        self.dv_name              = sim_data_ob.dv_name     
-        self.dv_cardinality       = sim_data_ob.dv_cardinality  
-        self.treatment_variable   = sim_data_ob.treatment_variable  
-        self.absolute_effect_size = sim_data_ob.absolute_effect_size    
-        self.sample_size          = sim_data_ob.sample_size  
-        self.covariates           = sim_data_ob.covariates       
-        self.data                 = sim_data_ob.data
-        self.sims_per_point       = sims_per_point
-        self.informed             = informed
+        self.rejection_region        = rejection_region
+        self.desired_power           = desired_power
+        self.precision               = precision
+        self.search_orders           = search_orders
+        self.dv_name                 = sim_data_ob.dv_name     
+        self.dv_cardinality          = sim_data_ob.dv_cardinality  
+        self.treatment_variable      = sim_data_ob.treatment_variable  
+        self.absolute_effect_size    = sim_data_ob.absolute_effect_size    
+        self.sample_size             = sim_data_ob.sample_size  
+        self.covariates              = sim_data_ob.covariates       
+        self.data                    = sim_data_ob.data
+        self.sims_per_point          = sims_per_point
+        self.informed                = informed
+        self.data_file_name          = sim_data_ob.data_file_name
+        self.data_file_location      = sim_data_ob.data_file_location
+        self.meta_data_file_name     = sim_data_ob.meta_data_file_name
+        self.meta_data_file_location = sim_data_ob.meta_data_file_location
         
         
     def preliminary_screen(self):
