@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb,amsmath}% http://ctan.org/pkg/{amssymb,amsmath}
+\usepackage{braket}% http://ctan.org/pkg/braket
+\usepackage[margin=0.1in]{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{relsize}
+\usepackage{pdflscape}
+\begin{document}
+
+\begin{center}
+\Large\textbf{Mean Total Simulation Runtime and Number of}\\
+\Large\textbf{Simulations Used for 100 Hypothetical A/B Tests}\\
+\normalsize\textbf{Data Generating Processes are Randomly Generated with Estimated }\\
+\normalsize\textbf{Sample Size Varying from 1 to 1,000,000 with $\alpha$ = 0.05}\\
+\normalsize\textbf{and precision +/- 0.025 of (1 - $\beta$ = 0.80)}\\
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|ccc}
+\multicolumn{1}{l|}{}                                                                                                                          & \textbf{\begin{tabular}[c]{@{}c@{}}Binary Search \\ (Uninformed)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Binary Search \\ (with Starting Value)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Isotonic \\ Interpolation\end{tabular}} \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Time Taken in Seconds\\ (n \textless{}= 100,000)\end{tabular}}                                              & \begin{tabular}[c]{@{}c@{}}1,574\\ (522)\end{tabular}                          & \begin{tabular}[c]{@{}c@{}}449\\ (127)\end{tabular}                                     & \begin{tabular}[c]{@{}c@{}}154\\ (128)\end{tabular}                        \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Simulations Used\\ (n \textless{}= 100,000)\end{tabular}}                                                   & \begin{tabular}[c]{@{}c@{}}2,158\\ (430)\end{tabular}                          & \begin{tabular}[c]{@{}c@{}}1,716\\ (261)\end{tabular}                                   & \begin{tabular}[c]{@{}c@{}}621\\ (405)\end{tabular}                        \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Number of Hypothetical \\ Experimental Results\\ (n \textless{}= 100,000)\end{tabular}}                     & \multicolumn{3}{c}{19}                                                                                                                                                                                                                                \\ \hline
+\multicolumn{1}{l|}{}                                                                                                                          & \multicolumn{1}{l}{}                                                           & \multicolumn{1}{l}{}                                                                    & \multicolumn{1}{l}{}                                                       \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Time Taken in Seconds\\ (100,000 \textless n \textless{}= 1,000,000)\end{tabular}}                          & \begin{tabular}[c]{@{}c@{}}1,200\\ (495)\end{tabular}                          & \begin{tabular}[c]{@{}c@{}}1,346\\ (747)\end{tabular}                                   & \begin{tabular}[c]{@{}c@{}}350\\ (248)\end{tabular}                        \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Simulations Used\\ (100,000 \textless n \textless{}= 1,000,000)\end{tabular}}                               & \begin{tabular}[c]{@{}c@{}}1,407\\ (348)\end{tabular}                          & \begin{tabular}[c]{@{}c@{}}1,751\\ (378)\end{tabular}                                   & \begin{tabular}[c]{@{}c@{}}798\\ (397)\end{tabular}                        \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Number of Hypothetical \\ Experimental Results\\ (100,000 \textless n \textless{}= 1,000,000)\end{tabular}} & \multicolumn{3}{c}{81}                                                                                                                                                                                                                               
+\end{tabular}
+\end{table}
+\end{center}
+
+\end{document}
