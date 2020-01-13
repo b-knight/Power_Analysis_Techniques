@@ -31,4 +31,26 @@
 \end{table}
 \end{center}
 
+\newpage
+\begin{center}
+\large\textbf{Mean Total Simulation Runtime and Number of Simulations Used}\\
+\large\textbf{for Power Analysis of 100 Randomly Generated A/B Tests}\\
+\tiny\phantom{a}
+\small\textbf{Estimated Sample Size Varies from 1 to 1,000,000 with $\alpha$ = 0.05 and (1 - $\beta$) = 0.80 +/- 0.025}\\
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|ccc}
+\multicolumn{1}{l|}{}                                                                                                                          & \textbf{\begin{tabular}[c]{@{}c@{}}Binary Search \\ (Uninformed)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Binary Search \\ (with Starting Value)\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Isotonic \\ Interpolation\end{tabular}} \\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Mean Time Taken in Seconds\\ (S.D.)\end{tabular}}                                              & \begin{tabular}[c]{@{}c@{}}1,271\\ (519)\end{tabular}  
+& \begin{tabular}[c]{@{}c@{}}1,176\\ (761)\end{tabular}                                     
+& \begin{tabular}[c]{@{}c@{}}313\\ (242)\end{tabular}                        
+\\ \hline
+\textbf{\begin{tabular}[c]{@{}c@{}}Mean Simulations Required\\ (S.D.)\end{tabular}}                                                   & \begin{tabular}[c]{@{}c@{}}1,550\\ (468)\end{tabular}                          
+& \begin{tabular}[c]{@{}c@{}}1,744\\ (347)\end{tabular}                                   
+& \begin{tabular}[c]{@{}c@{}}764\\ (402)\end{tabular}                        
+\end{tabular}
+\end{table}
+\end{center}
+
 \end{document}
