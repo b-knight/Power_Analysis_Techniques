@@ -305,9 +305,14 @@ class sim_data:
                 items_to_log.update({'noise_loc': noise_loc})
                 items_to_log.update({'noise_scale': noise_scale})
                 items_to_log.update({'stats': description})
-                items_to_log.update({'rsquared ': model.rsquared})
+                items_to_log.update({'rsquared': model.rsquared})
                 items_to_log.update({'rsquared_adj': model.rsquared_adj})
-
+                items_to_log.update({'data_file_name': data_file_name})
+                items_to_log.update({'meta_data_file_name': data_file_name[0:-4] + "_log_file.txt"})
+                items_to_log.update({'data_file_location': current_dir + "/data"})
+                items_to_log.update({'meta_data_file_location': current_dir + "/data/log_files"})                
+                
+            
                 # create dir
                 if not os.path.exists(current_dir + '/data/'):
                     os.makedirs(current_dir + '/data/') 

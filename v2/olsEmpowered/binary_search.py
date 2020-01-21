@@ -1,35 +1,39 @@
 import pandas as pd
-from olsEmpowered import interpolation
+from olsEmpowered import power_estimation
 
-class binary_search(interpolation.interpolation):
+class binary_search(power_estimation.power_estimation):
 
     # constructor
-    def __init__(self, sim_data_ob,
-                 rejection_region = 0.05,
-                 desired_power    = 0.8,
-                 precision        = 0.025,
+    def __init__(self, power_estimation,
                  sims_per_point   = 200,
                  search_orders    = 1,
                  informed         = 1):
         
         # set class variables
-        self.rejection_region        = rejection_region
-        self.desired_power           = desired_power
-        self.precision               = precision
-        self.search_orders           = search_orders
-        self.dv_name                 = sim_data_ob.dv_name     
-        self.dv_cardinality          = sim_data_ob.dv_cardinality  
-        self.treatment_variable      = sim_data_ob.treatment_variable  
-        self.absolute_effect_size    = sim_data_ob.absolute_effect_size    
-        self.sample_size             = sim_data_ob.sample_size  
-        self.covariates              = sim_data_ob.covariates       
-        self.data                    = sim_data_ob.data
         self.sims_per_point          = sims_per_point
+        self.search_orders           = search_orders
         self.informed                = informed
-        self.data_file_name          = sim_data_ob.data_file_name
-        self.data_file_location      = sim_data_ob.data_file_location
-        self.meta_data_file_name     = sim_data_ob.meta_data_file_name
-        self.meta_data_file_location = sim_data_ob.meta_data_file_location
+        
+        self.rejection_region        = power_estimation.rejection_region
+        self.desired_power           = power_estimation.desired_power
+        self.precision               = power_estimation.precision
+        self.dv_name                 = power_estimation.dv_name     
+        self.dv_cardinality          = power_estimation.dv_cardinality  
+        self.treatment_variable      = power_estimation.treatment_variable  
+        self.absolute_effect_size    = power_estimation.absolute_effect_size    
+        self.sample_size             = power_estimation.sample_size  
+        self.stats                   = power_estimation.stats 
+        self.data                    = power_estimation.data
+        self.data_file_name          = power_estimation.data_file_name
+        self.data_file_location      = power_estimation.data_file_location
+        self.meta_data_file_name     = power_estimation.meta_data_file_name
+        self.meta_data_file_location = power_estimation.meta_data_file_location
+        self.rsquared                = power_estimation.rsquared
+        self.rsquared_adj            = power_estimation.rsquared_adj   
+        self.starting_value          = power_estimation.starting_value
+        
+        if hasattr(power_estimation, 'covariates'):
+            self.covariates          = power_estimation.covariates  
         
         
     def preliminary_screen(self):
@@ -37,8 +41,8 @@ class binary_search(interpolation.interpolation):
         result_dict = {}      
         
         if self.informed == 1:
-            ub      = self.set_upper_bound()
-            mid     = self.set_starting_value()  
+            ub      = self.starting_value*pow(10,self.search_orders) 
+            mid     = self.starting_value  
             print("Binary search commenced, centered on n = " +
                   "{:,} informed by residual variance.".format(mid))
         else:
