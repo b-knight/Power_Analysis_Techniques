@@ -1,0 +1,8 @@
+(base) bknight@bknight-desktop:~/Documents/pwrols$ python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+Enter your username: **********
+Enter your password: **********
+Uploading distributions to https://test.pypi.org/legacy/
+Uploading pwrols-0.0.1-py3-none-any.whl
+
+View at:
+https://test.pypi.org/project/pwrols/0.0.1/
